@@ -1,0 +1,12 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+format: jb-book
+root: welcome
+parts:
+  - caption: Basics
+    chapters:
+    - file: content/introduction_to_dash
+  - caption: Interactive Charts
+    chapters:
+    - file: content/racing_bar_chart
+    - file: content/bar_charts_with_slider
