@@ -1,48 +1,59 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Introduction &#8212; Data Visualizaton</title>
-    
+    <title>Introduction to Plotly Dash &#8212; Data Visualizaton</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -50,447 +61,362 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/introduction_to_dash';</script>
+    <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Racing Bar Charts" href="racing_bar_chart.html" />
-    <link rel="prev" title="About this project" href="../welcome.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+    <link rel="next" title="Racing Bar Charts with Dash" href="racing_bar_chart.html" />
+    <link rel="prev" title="About this project" href="../about.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../about.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo.webp" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Data Visualizaton</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/logo.webp" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.webp" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../welcome.html">
+                <a class="reference internal" href="../about.html">
                     About this project
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Basics
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Introduction
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Interactive Charts
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="racing_bar_chart.html">
-   Racing Bar Charts
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="bar_charts_with_slider.html">
-   Charts with a Slider
-  </a>
- </li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction to Plotly Dash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="racing_bar_chart.html">Racing Bar Charts with Dash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bar_charts_with_slider.html">Charts with a Slider (Plotly Dash)</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
 
 
 
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/gabegaz/datavis" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
   </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/gabegaz/datavis/issues/new?title=Issue%20on%20page%20%2Fcontent/introduction_to_dash.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
 
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-    </ul>
-  </div>
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/content/introduction_to_dash.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/gabegaz/datavis"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/gabegaz/datavis/issues/new?title=Issue%20on%20page%20%2Fcontent/introduction_to_dash.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/content/introduction_to_dash.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Introduction
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-six-step-process-to-visualize-data">
-   A six step process to visualize data
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-1-import-the-necessary-libraries">
-   Step 1: Import the necessary libraries
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-2-instantiate-app">
-   Step 2: Instantiate app
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-3-extract-and-prepare-data">
-   Step 3: Extract and prepare data
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-4-generate-the-figure">
-   Step 4: Generate the figure
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-5-now-the-layout">
-   Step 5: Now the layout
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-6-callback-functions">
-   Step 6: Callback functions
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-7-run-the-app">
-   Step 7: Run the app
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Introduction</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Introduction
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-six-step-process-to-visualize-data">
-   A six step process to visualize data
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-1-import-the-necessary-libraries">
-   Step 1: Import the necessary libraries
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-2-instantiate-app">
-   Step 2: Instantiate app
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-3-extract-and-prepare-data">
-   Step 3: Extract and prepare data
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-4-generate-the-figure">
-   Step 4: Generate the figure
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-5-now-the-layout">
-   Step 5: Now the layout
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-6-callback-functions">
-   Step 6: Callback functions
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-7-run-the-app">
-   Step 7: Run the app
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction to Plotly Dash</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-six-step-process-to-visualize-data-with-dash">A six step process to visualize data with Dash</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-import-the-necessary-libraries">Step 1: Import the necessary libraries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-instantiate-app">Step 2: Instantiate app</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-extract-and-prepare-data">Step 3: Extract and prepare data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-generate-the-figure">Step 4: Generate the figure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-now-the-layout">Step 5: Now the layout</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-callback-functions">Step 6: Callback functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-run-the-app">Step 7: Run the app</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
-  <section id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-plotly-dash">
+<h1>Introduction to Plotly Dash<a class="headerlink" href="#introduction-to-plotly-dash" title="Permalink to this heading">#</a></h1>
 <p>We will start off our journey of data visualization with the basics using Plotly Dash. Dash is an open source Python library built on top of Plotly.js, React and Flask, Dash ties modern UI elements like dropdowns, sliders, and graphs directly to your analytical Python code. It’s maintained by Plotly, another visualization library which helps building, scaling, and deploying data apps in Python. To introduce you to what a simple Dash app looks like, let’s create a simple visualization app with a small data set.</p>
-</section>
-<section id="a-six-step-process-to-visualize-data">
-<h1>A six step process to visualize data<a class="headerlink" href="#a-six-step-process-to-visualize-data" title="Permalink to this headline">#</a></h1>
+<section id="a-six-step-process-to-visualize-data-with-dash">
+<h2>A six step process to visualize data with Dash<a class="headerlink" href="#a-six-step-process-to-visualize-data-with-dash" title="Permalink to this heading">#</a></h2>
 <p>To simplify how Plotly Dash works, we will break down the process into six distinct steps. These steps are what you need to have before getting your interactive chart from dash app.</p>
 <p>The steps are more or less the same irrispective of the types of project you may be working on; and we will follow all of the hands-on in this project based on these steps. Steps 3-5 might be a little involved and might suddenly increase in complexity depending on the size of the application.</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-align:left head"><p>#</p></th>
-<th class="text-align:center head"><p><p style="text-align: left;">Steps </p></p></th>
-<th class="text-align:right head"><p><p style="text-align: left;"> app </p></p></th>
+<tr class="row-odd"><th class="head text-left"><p>#</p></th>
+<th class="head text-center"><p><p style="text-align: left;">Steps </p></p></th>
+<th class="head text-right"><p><p style="text-align: left;"> app </p></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:left"><p>1</p></td>
-<td class="text-align:center"><p><p style="text-align: left;">Imports (boiler plate) </p></p></td>
-<td class="text-align:right"><p><p style="text-align: left;"> from dash import Dash, html, dcc</p> <p style="text-align: left;"> import plotly.express as px </p> <p style="text-align: left;"> import pandas as pd </p></p></td>
+<tr class="row-even"><td class="text-left"><p>1</p></td>
+<td class="text-center"><p><p style="text-align: left;">Imports (boiler plate) </p></p></td>
+<td class="text-right"><p><p style="text-align: left;"> from dash import Dash, html, dcc</p> <p style="text-align: left;"> import plotly.express as px </p> <p style="text-align: left;"> import pandas as pd </p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p>2</p></td>
-<td class="text-align:center"><p><p style="text-align: left;"> App Instantiation <p></p></td>
-<td class="text-align:right"><p><p style="text-align: left;">app = Dash(<code class="docutils literal notranslate"><span class="pre">__name__</span></code>) </p></p></td>
+<tr class="row-odd"><td class="text-left"><p>2</p></td>
+<td class="text-center"><p><p style="text-align: left;"> App Instantiation <p></p></td>
+<td class="text-right"><p><p style="text-align: left;">app = Dash(<code class="docutils literal notranslate"><span class="pre">__name__</span></code>) </p></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p>3</p></td>
-<td class="text-align:center"><p><p style="text-align: left;"> Extract data to be visualized</p></p></td>
-<td class="text-align:right"><p><p style="text-align: left;"> df = pd.read_csv(…) </p></p></td>
+<tr class="row-even"><td class="text-left"><p>3</p></td>
+<td class="text-center"><p><p style="text-align: left;"> Extract data to be visualized</p></p></td>
+<td class="text-right"><p><p style="text-align: left;"> df = pd.read_csv(…) </p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p>4</p></td>
-<td class="text-align:center"><p><p style="text-align: left;"> Visualize the data</p></p></td>
-<td class="text-align:right"><p><p style="text-align: left;"> fig = px.bar(…) </p></p></td>
+<tr class="row-odd"><td class="text-left"><p>4</p></td>
+<td class="text-center"><p><p style="text-align: left;"> Visualize the data</p></p></td>
+<td class="text-right"><p><p style="text-align: left;"> fig = px.bar(…) </p></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p>5</p></td>
-<td class="text-align:center"><p><p style="text-align: left;"> App layout: a list of HTMl and/or interactive components </p></p></td>
-<td class="text-align:right"><p><p style="text-align: left;"> app.layout = html.Div([<br>       dcc.Dropdown() <br>        dcc.Graph()<br>…]) </p></p></td>
+<tr class="row-even"><td class="text-left"><p>5</p></td>
+<td class="text-center"><p><p style="text-align: left;"> App layout: a list of HTMl and/or interactive components </p></p></td>
+<td class="text-right"><p><p style="text-align: left;"> app.layout = html.Div([<br>       dcc.Dropdown() <br>        dcc.Graph()<br>…]) </p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p>6</p></td>
-<td class="text-align:center"><p><p style="text-align: left;"> Call back functions</p></p></td>
-<td class="text-align:right"><p><p style="text-align: left;"> app.callback(…) </p></p></td>
+<tr class="row-odd"><td class="text-left"><p>6</p></td>
+<td class="text-center"><p><p style="text-align: left;"> Call back functions</p></p></td>
+<td class="text-right"><p><p style="text-align: left;"> app.callback(…) </p></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p>7</p></td>
-<td class="text-align:center"><p><p style="text-align: left;"> Running the app </p></p></td>
-<td class="text-align:right"><p><p style="text-align: left;"> if <strong>name</strong> = “<strong>main</strong>”:<br>        app.run_server() </p></p></td>
+<tr class="row-even"><td class="text-left"><p>7</p></td>
+<td class="text-center"><p><p style="text-align: left;"> Running the app </p></p></td>
+<td class="text-right"><p><p style="text-align: left;"> if <strong>name</strong> = “<strong>main</strong>”:<br>        app.run_server() </p></p></td>
 </tr>
 </tbody>
 </table>
@@ -512,9 +438,8 @@ source venv/bin/activate            #This activates your environment
 pip install dash
 pip install pandas
 </code>
-</pre></section>
-<section id="step-1-import-the-necessary-libraries">
-<h1>Step 1: Import the necessary libraries<a class="headerlink" href="#step-1-import-the-necessary-libraries" title="Permalink to this headline">#</a></h1>
+</pre><section id="step-1-import-the-necessary-libraries">
+<h3>Step 1: Import the necessary libraries<a class="headerlink" href="#step-1-import-the-necessary-libraries" title="Permalink to this heading">#</a></h3>
 <p>Importing dash and its ecosystem is no different from importing other python library. The first line needs some explanation, however. There are two flavours of dash(Python): Dash and JupyterDash. JupyterDash is usually used to work with Jupyter Notebook as we are doing now. For script based python files, you can use <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">dash</span> <span class="pre">import</span> <span class="pre">Dash</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -529,7 +454,7 @@ pip install pandas
 <p>The second line imports two important components <code class="docutils literal notranslate"><span class="pre">html</span></code> and <code class="docutils literal notranslate"><span class="pre">dcc</span></code>. In the third line, we are importing plotly express that does the actualization visualization task. Finally, we are importing pandas to extract, handle and prepare data so that it will be in a format that plotly express requires.</p>
 </section>
 <section id="step-2-instantiate-app">
-<h1>Step 2: Instantiate app<a class="headerlink" href="#step-2-instantiate-app" title="Permalink to this headline">#</a></h1>
+<h3>Step 2: Instantiate app<a class="headerlink" href="#step-2-instantiate-app" title="Permalink to this heading">#</a></h3>
 <p>Instantiating dash app is getting an object called app from Dash. You can simply use <strong>name</strong> inside the parenthesis and ignore what it is for now.</p>
 <p>We use JupyterDash here. As explained above, you can use Dash proper (so that this will be <code class="docutils literal notranslate"><span class="pre">app</span> <span class="pre">=</span> <span class="pre">Dash(__name__)</span></code> if you want to work in a different environment from Jupyter notebook.</p>
 <div class="cell docutils container">
@@ -541,7 +466,7 @@ pip install pandas
 </div>
 </section>
 <section id="step-3-extract-and-prepare-data">
-<h1>Step 3: Extract and prepare data<a class="headerlink" href="#step-3-extract-and-prepare-data" title="Permalink to this headline">#</a></h1>
+<h3>Step 3: Extract and prepare data<a class="headerlink" href="#step-3-extract-and-prepare-data" title="Permalink to this heading">#</a></h3>
 <p>In the third step, we use data from the World Bank on exports of goods and services for three countries: Ethiopia, Uganda and Kenya. The values are expressed in millions of USD. To extract this data, we use pandas’s <code class="docutils literal notranslate"><span class="pre">pd.read_excel(...)</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -786,7 +711,7 @@ pip install pandas
 </div>
 </section>
 <section id="step-4-generate-the-figure">
-<h1>Step 4: Generate the figure<a class="headerlink" href="#step-4-generate-the-figure" title="Permalink to this headline">#</a></h1>
+<h3>Step 4: Generate the figure<a class="headerlink" href="#step-4-generate-the-figure" title="Permalink to this heading">#</a></h3>
 <p>Dash graphs are drawn separately and will be appended in the layout (that we will build in teh next step). There are a couple of important functions in the Plotly ecosystem that we can use to draw graphs for Dash. The first of these is <a class="reference external" href="https://plotly.com/python/plotly-express/">plotly express</a>. Plotly express was imported as px above. We can use its inbuilt fuction <code class="docutils literal notranslate"><span class="pre">px.line(...)</span></code> to draw our graph based on the export data like so.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -800,7 +725,7 @@ pip install pandas
 <p>We are drawing a line graph. It has four basic arguments. The function takes data using the first argument <code class="docutils literal notranslate"><span class="pre">df</span></code>. The second and third arguments are the <code class="docutils literal notranslate"><span class="pre">x-axis</span></code>, and the <code class="docutils literal notranslate"><span class="pre">y-axis</span></code> respectively. Finally, want to differenciate which lines are for which country. Thus, the last argument (i.e. <code class="docutils literal notranslate"><span class="pre">color</span></code>) serves this purpose.</p>
 </section>
 <section id="step-5-now-the-layout">
-<h1>Step 5: Now the layout<a class="headerlink" href="#step-5-now-the-layout" title="Permalink to this headline">#</a></h1>
+<h3>Step 5: Now the layout<a class="headerlink" href="#step-5-now-the-layout" title="Permalink to this heading">#</a></h3>
 <p>Once we draw the graph (which was captured in the object <code class="docutils literal notranslate"><span class="pre">fig</span></code>), we can prepare a layout for putting it properly. This leads us to <code class="docutils literal notranslate"><span class="pre">layouts</span></code>. Dash layouts are simply html components with some additional Dash components.</p>
 <p>The function<code class="docutils literal notranslate"><span class="pre">html.Div(...)</span></code> (which translates to html’s <code class="docutils literal notranslate"><span class="pre">Div</span></code>) holds everything including the graph and some text(such as title or a summary of the graph). The first object in the <code class="docutils literal notranslate"><span class="pre">html.Div(...)</span></code> is the title of the graph with html header. The second argument of the function is the <code class="docutils literal notranslate"><span class="pre">dcc.Graph(...)</span></code> which holds the figure with the given id. The id links to the call back function which doesn’t exist here. We will cover callbacks in a later article.</p>
 <div class="cell docutils container">
@@ -818,11 +743,11 @@ pip install pandas
 </div>
 </section>
 <section id="step-6-callback-functions">
-<h1>Step 6: Callback functions<a class="headerlink" href="#step-6-callback-functions" title="Permalink to this headline">#</a></h1>
+<h3>Step 6: Callback functions<a class="headerlink" href="#step-6-callback-functions" title="Permalink to this heading">#</a></h3>
 <p>We are not using callbacks here (we will deal with them in a latter section in this project).</p>
 </section>
 <section id="step-7-run-the-app">
-<h1>Step 7: Run the app<a class="headerlink" href="#step-7-run-the-app" title="Permalink to this headline">#</a></h1>
+<h3>Step 7: Run the app<a class="headerlink" href="#step-7-run-the-app" title="Permalink to this heading">#</a></h3>
 <p>Finnaly, we prepare the application to run from the terminal. <code class="docutils literal notranslate"><span class="pre">mode='inline'</span></code> is an argument that you might not use for Dash (it is used only for JupyterDash to help run on Jupyter Notebook)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -832,18 +757,23 @@ pip install pandas
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dash is running on http://127.0.0.1:8051/
+</pre></div>
+</div>
 <div class="output text_html">
-<iframe
-    width="100%"
-    height="650"
-    src="http://127.0.0.1:8051/"
-    frameborder="0"
-    allowfullscreen
-
-></iframe>
-</div></div>
+        <iframe
+            width="100%"
+            height="650"
+            src="http://127.0.0.1:8051/"
+            frameborder="0"
+            allowfullscreen
+            
+        ></iframe>
+        </div></div>
 </div>
 <p>You can click the link and see your app running. Even at this lavel of infance, Dash plots can exhibit some interactivity. Moving the cursor accross the lines show as values for the correspoending axis. Furthermore, once can click country name in the legend to hid plots on main graph, and so on.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -858,7 +788,7 @@ pip install pandas
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./content"
         },
         predefinedOutput: true
@@ -866,50 +796,114 @@ pip install pandas
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../welcome.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">About this project</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="racing_bar_chart.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Racing Bar Charts</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Getachew Abegaz<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
 
-
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../about.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">About this project</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="racing_bar_chart.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Racing Bar Charts with Dash</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-six-step-process-to-visualize-data-with-dash">A six step process to visualize data with Dash</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-import-the-necessary-libraries">Step 1: Import the necessary libraries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-instantiate-app">Step 2: Instantiate app</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-extract-and-prepare-data">Step 3: Extract and prepare data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-generate-the-figure">Step 4: Generate the figure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-now-the-layout">Step 5: Now the layout</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-callback-functions">Step 6: Callback functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-run-the-app">Step 7: Run the app</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Getachew Abegaz | <a href="https://www.gabegaz.com" target="__blank">www.gabegaz.com</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
