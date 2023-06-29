@@ -6,6 +6,23 @@
 <html lang="en" >
 
   <head>
+
+   <!-- Google Analytics (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T0L30D0FKN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-T0L30D0FKN'); 
+  </script>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8331794429158500"
+     crossorigin="anonymous">
+  </script>
+
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
@@ -393,6 +410,20 @@ pip install jupyter-dash   # pip install dash if you are on non-Jupyter environm
 pip install pandas
 </code>
 </pre></section>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8331794429158500"
+crossorigin="anonymous"></script>
+<!-- first_add -->
+<ins class="adsbygoogle"
+style="display:block"
+data-ad-client="ca-pub-8331794429158500"
+data-ad-slot="1168133780"
+data-ad-format="auto"
+data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 <section id="start-coding">
 <h2>Start coding<a class="headerlink" href="#start-coding" title="Permalink to this heading">#</a></h2>
 <p><strong>Importing packages</strong></p>
@@ -522,6 +553,20 @@ pip install pandas
 </div>
 </div>
 </div>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8331794429158500"
+crossorigin="anonymous"></script>
+<!-- first_add -->
+<ins class="adsbygoogle"
+style="display:block"
+data-ad-client="ca-pub-8331794429158500"
+data-ad-slot="1168133780"
+data-ad-format="auto"
+data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 <p><strong>Preparing dash layout</strong></p>
 <p>Now that we are done with getting data, preparing it for our purpose, it’s time to start with the layout of the figure we are building. Everything in the following code snippet is inside <code class="docutils literal notranslate"><span class="pre">html.Div()</span></code> function of the <code class="docutils literal notranslate"><span class="pre">html</span></code> module imported above. This is translated to html’s <code class="docutils literal notranslate"><span class="pre">div</span></code> component behind the scenes. Inside this div component, the title of the chart is put using <code class="docutils literal notranslate"><span class="pre">html.H2</span></code> which, in a similar manner, is translated to html’s h2 component.</p>
 <p>Next, we use <code class="docutils literal notranslate"><span class="pre">dcc</span></code> module to call a class Dropdown to select variables for visualization. <code class="docutils literal notranslate"><span class="pre">html.Br()</span></code> simply puts a vertical space. Our chart is put in the <code class="docutils literal notranslate"><span class="pre">html.Div()</span></code> with a <code class="docutils literal notranslate"><span class="pre">Graph</span></code> class coming with the same module. The <code class="docutils literal notranslate"><span class="pre">id='racing_bar_chart'</span></code> is a random name and can be changed, but a necessary construct to refer to the figure from a python callback function to be built in the next step.</p>
